@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="stylesheet" href="./css/style.css">
   </head>
-  <body>
-    <header class="container d-flex justify-content-between my-4 ">
+
+  <body class="bg-primary">
+    <header class="container rounded d-flex justify-content-between my-4 py-3">
         <h1>
             Simone Dice
         </h1>
@@ -17,14 +18,18 @@
             Gioca
         </button>
     </header>
-    <main class="container">
-        <div id="timer" class="text-center">
+
+    <main class="container rounded my-5">
+      <!-- il timer del gioco -->
+        <div id="timer" class="rounded text-center d-none">
 
         </div>
-        <div id="game" class="d-flex justify-content-between d-none">
+        <!-- sezione dove appariranno i numeri generati casualmente -->
+        <div id="game" class="container rounded d-flex justify-content-between d-none w-50">
 
         </div>
-        <div id="form" class="container w-25 d-flex flex-column align-items-center gap-2 d-none">
+        <!-- sezione dove verrà richiesto un input da parte dell'utente -->
+        <div id="form" class="container rounded w-25 d-flex flex-column align-items-center gap-2 d-none">
             <label for="num1"> Numero 1</label>
             <input class="form-control" type="text" name="num1" id="num1">
             <label for="num2"> Numero 2</label>
@@ -38,7 +43,8 @@
             <button id="send" class="btn btn-primary"> Invia </button>
         </div>
         
-        <div id="end" class="text-center my-5">
+        <!-- sezione dove verrà stampato il risultato -->
+        <div id="end" class="rounded text-center my-5 d-none ">
 
         </div>
     </main>
