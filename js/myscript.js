@@ -11,7 +11,7 @@ const button = document.getElementById("play");
 const formButton = document.getElementById("send");
 let randomNum;
 
-button.addEventListener("click" , gameStart);
+button.addEventListener("click" , gameStart, {once : true});
 // al click del bottone, apparirà il timer ed una serie di numeri generati casualmente
 function gameStart()
 {
@@ -50,6 +50,7 @@ function gameStart()
       {
         // nel caso il timer arrivi a 0, viene terminata l'istruzione e viene avviata la funzione timeout()
         clearInterval(gameTimer);
+        button.addEventListener("click" , gameStart, {once : true});
         timeOut();
       } 
       else 
@@ -82,7 +83,8 @@ function timeOut()
         for(let i=0; i<5; i++)
         {
             numID = "num" + (i + 1);
-            answers.push(document.getElementById(numID).value);
+            if(!answers.includes(document.getElementById(numID).value))
+                answers.push(document.getElementById(numID).value);
         }
         // vengono comparati i due vettori, asnwers e randomNum. Se viene trovata una corrispondenza viene incrementato il punteggio e inserito il numero
         // nel vettore rightNumbers
